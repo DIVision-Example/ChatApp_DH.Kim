@@ -1,0 +1,8 @@
+C:\Users\aweso\Desktop\WPFChat\WPFChat\ConsoleClient\bin\Debug\ConsoleClient.exe.config
+C:\Users\aweso\Desktop\WPFChat\WPFChat\ConsoleClient\bin\Debug\ConsoleClient.exe
+C:\Users\aweso\Desktop\WPFChat\WPFChat\ConsoleClient\bin\Debug\ConsoleClient.pdb
+C:\Users\aweso\Desktop\WPFChat\WPFChat\ConsoleClient\obj\Debug\ConsoleClient.csproj.AssemblyReference.cache
+C:\Users\aweso\Desktop\WPFChat\WPFChat\ConsoleClient\obj\Debug\ConsoleClient.csproj.SuggestedBindingRedirects.cache
+C:\Users\aweso\Desktop\WPFChat\WPFChat\ConsoleClient\obj\Debug\ConsoleClient.csproj.CoreCompileInputs.cache
+C:\Users\aweso\Desktop\WPFChat\WPFChat\ConsoleClient\obj\Debug\ConsoleClient.exe
+C:\Users\aweso\Desktop\WPFChat\WPFChat\ConsoleClient\obj\Debug\ConsoleClient.pdb
