@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFServer"
         mc:Ignorable="d"
-        Title="Server" Height="450" Width="800">
+        Title="Server" Height="450" Width="400">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
@@ -13,11 +13,11 @@
         </Grid.RowDefinitions>
 
         <StackPanel Orientation="Horizontal">
-            <Button Name="btnConnect" Content="Connect" Margin="10, 0, 0, 0" Padding="10, 0, 10, 0" Height="35" Click="btnConnect_Click" />
+            <Button Name="btnConnect" Content="Connect" Margin="10, 0, 0, 0" Padding="10, 0, 10, 0" Height="35" />
             <Button Name="btnSend" Content="Send" Margin="10, 0, 0, 0" Padding="10, 0, 10, 0" Height="35"/>
         </StackPanel>
 
-        <ListView Name="LogList" Grid.Row="1" Margin="10, 10, 10, 10">
+        <ListView Name="LogList" ItemsSource="{Binding chatlog}" Grid.Row="1" Margin="10, 10, 10, 10">
             
         </ListView>
     </Grid>

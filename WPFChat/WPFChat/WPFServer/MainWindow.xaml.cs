@@ -15,49 +15,85 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Printing;
+using System.Diagnostics;
+using System.Windows.Threading;
+using System.Runtime.CompilerServices;
+using System.Collections.ObjectModel;
 
 namespace WPFServer {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window {
+        // TcpClient childSocket;
+        public List<Baby> school = new List<Baby>();
 
-        private TcpListener server;
         public MainWindow() {
             InitializeComponent();
-
-            
+            new MainWindow().MyWorld();
         }
-
-        private async void btnConnect_Click(object sender, RoutedEventArgs e) {
-            server = new TcpListener(IPAddress.Parse("192.168.1.202"), 7000);
-            server.Start();
-
-            while(true) {
-                TcpClient client = await server.AcceptTcpClientAsync();
-
-                _ = HandleClient(client);
+        public void MyWorld() {
+            TcpListener listener = new TcpListener(IPAddress.Any, 7000);
+            listener.Start();
+            Debug.WriteLine("서버 실행");
+            while (true) {
+                TcpClient childSocket = listener.AcceptTcpClient();
+                Debug.WriteLine("새 클라이언트 연결됨");
+                school.Add(new Baby(childSocket, this));
             }
         }
+    }
 
-        private async Task HandleClient(TcpClient client) {
-            NetworkStream stream = client.GetStream();
-            byte[] buffer = new byte[1024];
+    class Baby {
+        byte[] buffer = new byte[1024];
+        TcpClient socket = new TcpClient();
+        MainWindow world = new MainWindow();
+        NetworkStream stream = null;
 
-            int read;
+        public Baby(TcpClient socket, MainWindow world) {
+            this.socket = socket;
+            this.world = world;
+            stream = socket.GetStream();
+            Thread thread = new Thread(Run);
+            thread.Start();
 
-            while((read = await stream.ReadAsync(buffer, 0, buffer.Length)) > 0) { 
-                string Message = Encoding.Default.GetString(buffer, 0, read);
-
-                LogList.Items.Add(Message);
-
-                var messageBuffer = Encoding.Default.GetBytes($"{Message}");
-                stream.Write(messageBuffer);
-            }
+        }
+        public void Broadcast(string message) {
+            byte[] buffer = Encoding.Default.GetBytes(message);
+            stream.Write(buffer, 0, buffer.Length);
         }
 
+        public void Run() {
+            Debug.WriteLine("새로운 Baby");
 
+            try {
+                while (true) {
+                    byte[] buffer = new byte[1024];
+                    int nBytes = stream.Read(buffer, 0, buffer.Length);
+                    string message = Encoding.Default.GetString(buffer);
 
+                    if (nBytes > 0) {
+                        // 모두에게
+                        if (true) {
+                            foreach (Baby student in world.school) {
+                                student.Broadcast(message);
+                            }
+                        } else {
+                            stream.Write(buffer, 0, buffer.Length);
+                        }
+                        Debug.WriteLine(message);
+                    }
+                }
+            } catch (Exception e) {
+                Debug.WriteLine(e.ToString());
+            }
 
+            Debug.WriteLine("*************");
+            Debug.WriteLine("**** AND ****");
+            Debug.WriteLine("*************");
+
+            stream.Close();
+            socket.Close();
+        }
+        // 모바텀을 설치하고,클아이언트 대신사용한다.
+        // 프로토콜은 Telnet을 선택하고, ip, port 를 서버것을 사용한다.
     }
 }

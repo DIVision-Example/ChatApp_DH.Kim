@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\aweso\\Desktop\\WPFChat\\WPFChat\\WPFServer\\WPFServer.csproj",
+      "projectUniqueName": "C:\\Users\\aweso\\Desktop\\Project\\DIVision\\GitHub\\T102_Chat\\WPFChat\\WPFChat\\WPFServer\\WPFServer.csproj",
       "projectName": "WPFServer",
-      "projectPath": "C:\\Users\\aweso\\Desktop\\WPFChat\\WPFChat\\WPFServer\\WPFServer.csproj",
+      "projectPath": "C:\\Users\\aweso\\Desktop\\Project\\DIVision\\GitHub\\T102_Chat\\WPFChat\\WPFChat\\WPFServer\\WPFServer.csproj",
       "packagesPath": "C:\\Users\\aweso\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\aweso\\Desktop\\WPFChat\\WPFChat\\WPFServer\\obj\\",
+      "outputPath": "C:\\Users\\aweso\\Desktop\\Project\\DIVision\\GitHub\\T102_Chat\\WPFChat\\WPFChat\\WPFServer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
