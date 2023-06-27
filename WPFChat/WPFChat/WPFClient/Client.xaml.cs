@@ -13,7 +13,7 @@ namespace WPFClient {
     /// </summary>
     /// 
     public partial class UiClient : Window {
-        public static string ip = "192.168.2.80";
+        public static string ip = "192.168.2.75";
         public static int port = 7000;
         ChatClient client = new ChatClient();
 
@@ -83,9 +83,8 @@ namespace WPFClient {
                 }
 
                 byte[] ReceiveBuffer = new byte[1024];
-                ReceiveBuffer = Encoding.Default.GetBytes("한글테스트");
 
-                //stream.Read(ReceiveBuffer, 0, ReceiveBuffer.Length);
+                stream.Read(ReceiveBuffer, 0, ReceiveBuffer.Length);
                 string message = Encoding.Default.GetString(ReceiveBuffer);
 
                 ChattingList.Dispatcher.Invoke(() => { 

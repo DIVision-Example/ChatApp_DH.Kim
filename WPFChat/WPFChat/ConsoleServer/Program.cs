@@ -43,7 +43,7 @@ namespace ConsoleServer {
 
         }
         public void Broadcast(string message) {
-            byte[] buffer = Encoding.Default.GetBytes("안녕하세요");
+            byte[] buffer = Encoding.Default.GetBytes(message);
             stream.Write(buffer, 0, buffer.Length);
         }
 
