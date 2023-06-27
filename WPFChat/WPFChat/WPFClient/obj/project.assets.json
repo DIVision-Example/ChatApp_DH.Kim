@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\aweso\\Desktop\\Project\\DIVision\\GitHub\\T102_Chat\\WPFChat\\WPFChat\\WPFClient\\WPFClient.csproj",
-      "projectName": "WPFClient",
-      "projectPath": "C:\\Users\\aweso\\Desktop\\Project\\DIVision\\GitHub\\T102_Chat\\WPFChat\\WPFChat\\WPFClient\\WPFClient.csproj",
+      "projectUniqueName": "C:\\Users\\aweso\\Desktop\\Project\\DIVision\\GitHub\\T102_Chat\\WPFChat\\WPFChat\\WPFClient\\Client.csproj",
+      "projectName": "Client",
+      "projectPath": "C:\\Users\\aweso\\Desktop\\Project\\DIVision\\GitHub\\T102_Chat\\WPFChat\\WPFChat\\WPFClient\\Client.csproj",
       "packagesPath": "C:\\Users\\aweso\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\aweso\\Desktop\\Project\\DIVision\\GitHub\\T102_Chat\\WPFChat\\WPFChat\\WPFClient\\obj\\",
       "projectStyle": "PackageReference",

@@ -85,7 +85,7 @@ namespace WPFClient {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WPFClient;V1.0.0.0;component/client.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Client;V1.0.0.0;component/client.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\Client.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
